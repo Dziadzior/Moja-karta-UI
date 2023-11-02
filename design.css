@@ -1,0 +1,118 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* ROOT-Kolory  */
+:root {
+    --kolor1: hsl(0, 100%, 55%);
+    --kolor1-jasny: hsl(0, 100%, 62%);
+    --kolor-czarny: hsl(0, 0%, 5%);
+    --kolor-tekst: hsl(0, 0%, 48%);
+    --kolor-body: hsl(0, 17%, 58%);
+
+
+
+/* ROOT-Czcionka */
+--font-body: 'Roboto', sans-serif;
+--font-rozmiar-h3: 1.2rem;
+--font-mniejszy-rozmiar: .85rem;
+}
+
+/* Ogół */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--kolor-body);
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* Karta */
+.blok {
+    display: grid;
+    place-items: center;
+    margin-inline: 1.5rem;
+    height: 100vh;
+}
+
+.karta {
+    position: relative;
+    padding: 1.25rem 2rem 3rem;
+    width: 256px;
+    background-color: var(--kolor-czarny);
+    border-radius: 1.5rem;
+    text-align: center;
+    box-shadow: 0 3px 15px hsla(29, 70%, 5%,.4); 
+}
+
+.karta__zdj {
+    width: 96px;
+    border-radius: 50%;
+}
+
+.karta__ramka {
+    display: grid;
+    place-items: center;
+    margin: 0 auto .75rem;
+    width: 110px;
+    height: 110px;
+    border: 2px solid var(--kolor1);
+    border-radius: 50%;
+}
+
+.karta__nazwa {
+    color: var(--kolor1);
+    font-size: var(--font-rozmiar-h3);
+    font-weight: 500;
+}
+
+.karta__profesje {
+    color: var(--kolor-tekst);
+    font-size: var(--font-mniejszy-rozmiar);
+    font-weight: 500;
+}
+
+.karta__linki {
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    bottom: -1.75rem;
+    width: 200px;
+    padding: .75rem;
+    background-color: var(--kolor1);
+    border-radius: 3rem;
+    text-align: initial;
+    box-shadow: 0 6px 26px hsla(0, 100%, 62%, .4);
+}
+
+.karta_linki-plus {
+    position: relative;
+}
+
+.karta__linki-wlacznik {
+    position: relative;
+    display: inline-flex;
+    padding: .3rem;
+    background-color: var(--kolor-czarny);
+    color: var(--kolor1-jasny);
+    font-size: 1.25rem;
+    cursor: pointer;
+    z-index: 10;
+}
