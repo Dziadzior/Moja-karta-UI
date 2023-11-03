@@ -11,6 +11,7 @@
     <title>Document</title>
   </head>
   <body>
+    <!-- Karta UI - Początek -->
     <div class="blok">
       <div class="karta">
         <div class="karta__ramka">
@@ -24,10 +25,10 @@
           <div class="karta__linki-plus">
             <!-- Włącznik -->
             <div class="karta__linki-wlacznik" id="karta-wlacznik">
-              <i class="fa-solid fa-plus-minus"></i>
+              <i class="fa-solid fa-plus"></i>
             </div>
 
-            <span class="karta__linki-tekst">Moje media społecznościowe</span>
+            <span class="karta__linki-tekst">Media społecznościowe</span>
 
             <!-- Media społecznościowe -->
             <ul class="karta__linki-lista">
@@ -59,14 +60,83 @@
         </div>
       </div>
     </div>
+    <!-- Karta UI - Koniec -->
 
-    <!-- Główny JS -->
-    <script src="glowny.js"></script>
+    <!-- Karty - Początek -->
+    <section class="etykiety">
+      <div class="karty">
+        <div class="kartinf aktywna" style="--bg: url(Obrazy/it2.jpg)">
+          <div class="cien"></div>
+          <div class="etykieta">
+            <div class="ikona" style="--color: green">
+              <ion-icon name="hardware-chip"></ion-icon>
+            </div>
+            <div class="info">
+              <div class="tytul">Information Technology</div>
+              <div>IT Can Surprise</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="kartinf" style="--bg: url(Obrazy/programowanie.jpg)">
+          <div class="cien"></div>
+          <div class="etykieta">
+            <div class="ikona" style="--color: black">
+              <i class="fa-solid fa-terminal"></i>
+            </div>
+            <div class="info">
+              <div class="tytul">Codeing</div>
+              <div>Programming Is Developing</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="kartinf" style="--bg: url(Obrazy/system.jpg)">
+          <div class="cien"></div>
+          <div class="etykieta">
+            <div class="ikona" style="--color: yellow">
+              <i class="fa-solid fa-laptop-code"></i>
+            </div>
+            <div class="info">
+              <div class="tytul">IT systems</div>
+              <div>In one word, MULTI-TASKING</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="kartinf" style="--bg: url(Obrazy/sieci2.jpg)">
+          <div class="cien"></div>
+          <div class="etykieta">
+            <div class="ikona" style="--color: red">
+              <ion-icon name="git-network-outline"></ion-icon>
+            </div>
+            <div class="info">
+              <div class="tytul">Networks</div>
+              <div>Compare Them To Neurons</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Karty - Koniec -->
+
+    <!-- Plusik JS -->
+    <script src="plusik.js"></script>
 
     <!-- FontAwesome -->
     <script
       src="https://kit.fontawesome.com/264a91385a.js"
       crossorigin="anonymous"
+    ></script>
+
+    <!-- IonIcons -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
   </body>
 </html>
