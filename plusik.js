@@ -20,3 +20,5 @@ const pokaSocialki = (wlacznikKarta, socialkiKarta) => {
 };
 
 pokaSocialki("karta-wlacznik", "karta-linki");
+
+

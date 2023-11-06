@@ -12,60 +12,62 @@
   </head>
   <body>
     <!-- Karta UI - Początek -->
-    <div class="blok">
-      <div class="karta">
-        <div class="karta__ramka">
-          <img src="Obrazy/ja.png" alt="ja" class="karta__zdj" />
-        </div>
+    <section class="kartaui">
+      <div class="blok">
+        <div class="karta">
+          <div class="karta__ramka">
+            <img src="Obrazy/ja.png" alt="ja" class="karta__zdj" />
+          </div>
 
-        <h3 class="karta__nazwa">Patryk Roszkowski</h3>
-        <span class="karta__profesje">Informatyk/Administrator IT</span>
+          <h3 class="karta__nazwa">Patryk Roszkowski</h3>
+          <span class="karta__profesje">Informatyk/Administrator IT</span>
 
-        <div class="karta__linki" id="karta-linki">
-          <div class="karta__linki-plus">
-            <!-- Włącznik -->
-            <div class="karta__linki-wlacznik" id="karta-wlacznik">
-              <i class="fa-solid fa-plus"></i>
+          <div class="karta__linki" id="karta-linki">
+            <div class="karta__linki-plus">
+              <!-- Włącznik -->
+              <div class="karta__linki-wlacznik" id="karta-wlacznik">
+                <i class="fa-solid fa-plus"></i>
+              </div>
+
+              <span class="karta__linki-tekst">Media społecznościowe</span>
+
+              <!-- Media społecznościowe -->
+              <ul class="karta__linki-lista">
+                <a
+                  href="www.linkedin.com/in/patryk-roszkowski-9a15a0268"
+                  target="_blank"
+                  class="karta__linki-media"
+                >
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+                <a
+                  href="https://github.com/Dziadzior"
+                  target="_blank"
+                  class="karta__linki-media"
+                >
+                  <i class="fa-brands fa-github"></i>
+                </a>
+
+                <a
+                  href="http://127.0.0.1:5500/index.html"
+                  target="_blank"
+                  class="karta__linki-media"
+                >
+                  <i class="fa-solid fa-code"></i>
+                </a>
+              </ul>
             </div>
-
-            <span class="karta__linki-tekst">Media społecznościowe</span>
-
-            <!-- Media społecznościowe -->
-            <ul class="karta__linki-lista">
-              <a
-                href="www.linkedin.com/in/patryk-roszkowski-9a15a0268"
-                target="_blank"
-                class="karta__linki-media"
-              >
-                <i class="fa-brands fa-linkedin-in"></i>
-              </a>
-
-              <a
-                href="https://github.com/Dziadzior"
-                target="_blank"
-                class="karta__linki-media"
-              >
-                <i class="fa-brands fa-github"></i>
-              </a>
-
-              <a
-                href="http://127.0.0.1:5500/index.html"
-                target="_blank"
-                class="karta__linki-media"
-              >
-                <i class="fa-solid fa-code"></i>
-              </a>
-            </ul>
           </div>
         </div>
       </div>
-    </div>
+    </section>
     <!-- Karta UI - Koniec -->
 
     <!-- Karty - Początek -->
     <section class="etykiety">
       <div class="karty">
-        <div class="kartinf aktywna" style="--bg: url(Obrazy/it2.jpg)">
+        <div class="card active" style="--bg: url(Obrazy/it2.jpg)">
           <div class="cien"></div>
           <div class="etykieta">
             <div class="ikona" style="--color: green">
@@ -78,7 +80,7 @@
           </div>
         </div>
 
-        <div class="kartinf" style="--bg: url(Obrazy/programowanie.jpg)">
+        <div class="card" style="--bg: url(Obrazy/programowanie.jpg)">
           <div class="cien"></div>
           <div class="etykieta">
             <div class="ikona" style="--color: black">
@@ -91,7 +93,7 @@
           </div>
         </div>
 
-        <div class="kartinf" style="--bg: url(Obrazy/system.jpg)">
+        <div class="card" style="--bg: url(Obrazy/system.jpg)">
           <div class="cien"></div>
           <div class="etykieta">
             <div class="ikona" style="--color: yellow">
@@ -104,7 +106,7 @@
           </div>
         </div>
 
-        <div class="kartinf" style="--bg: url(Obrazy/sieci2.jpg)">
+        <div class="card" id="kartku" style="--bg: url(Obrazy/sieci2.jpg)">
           <div class="cien"></div>
           <div class="etykieta">
             <div class="ikona" style="--color: red">
@@ -123,6 +125,9 @@
     <!-- Plusik JS -->
     <script src="plusik.js"></script>
 
+    <!-- KartyUI JS -->
+    <script src="script.js"></script>
+
     <!-- FontAwesome -->
     <script
       src="https://kit.fontawesome.com/264a91385a.js"
@@ -138,5 +143,8 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+
+    <!-- JQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
   </body>
 </html>

@@ -9,6 +9,7 @@
   --kolor-czarny: hsl(0, 0%, 5%);
   --kolor-tekst: hsl(0, 0%, 48%);
   --kolor-body: hsl(0, 58%, 29%);
+  --kolor-cien: hsla(0, 0%, 73%, 0.574);
 
   /* ROOT-Czcionka */
   --font-body: "Roboto", sans-serif;
@@ -46,6 +47,13 @@ img {
 }
 
 /* Karta */
+
+.kartaui {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .blok {
   display: grid;
   place-items: center;
@@ -224,36 +232,41 @@ img {
   height: 400px;
 }
 
-.karty .kartinf {
+.karty .card {
   position: relative;
   margin: 5px;
   min-width: 60px;
   background: var(--bg);
   background-size: auto 150%;
   background-position: center;
-  transition: 0.5s var(--cb);
+  transition: 1s var(--cb);
   border-radius: 30px;
   overflow: hidden;
   cursor: pointer;
 }
 
-.karty .kartinf .info .tytul {
+.karty .kcard .info .tytul {
   font-weight: bold;
   font-size: var(--font-naglowek);
+  color: var(--kolor1-jasny);
 }
 
-.karty .kartinf.aktywna {
+.karty .card.active {
   flex-grow: 1000;
-  background-size: auto 100%;
-  background-position: center;
+  background-size: cover;
 }
 
-.karty .kartinf.aktywna .etykieta {
+.karty .card:not(.active) .etykieta {
+  left: 10px;
+  bottom: 10px;
+}
+
+.karty .card.active .etykieta {
   left: 20px;
   bottom: 20px;
 }
 
-.karty .kartinf .etykieta {
+.karty .card .etykieta {
   position: absolute;
   display: flex;
   height: 40px;
@@ -261,7 +274,7 @@ img {
   transition: 0.5s var(--cb);
 }
 
-.karty .kartinf .etykieta .ikona {
+.karty .card .etykieta .ikona {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -272,11 +285,20 @@ img {
   border-radius: 50%;
 }
 
-.karty .kartinf .etykieta .info {
+.karty .card .etykieta .info {
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin-left: 10px;
   white-space: pre;
   transition: 1s var(--cb);
+}
+
+.karty .card .cien {
+  position: absolute;
+  height: 100px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(0, var(--kolor-cien), transparent);
 }
