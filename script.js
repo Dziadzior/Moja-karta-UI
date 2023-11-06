@@ -1,4 +1,4 @@
-$(".card").click(function () {
-  $(".card").removeClass("active");
-  $(this).addClass("active");
+$(".panel").click(function () {
+  $(".panel").removeClass("aktywny");
+  $(this).addClass("aktywny");
 });

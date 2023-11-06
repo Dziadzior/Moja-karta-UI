@@ -41,10 +41,10 @@ ul {
   list-style: none;
 }
 
-img {
+/* img {
   max-width: 100%;
   height: auto;
-}
+} */
 
 /* Karta */
 
@@ -225,48 +225,56 @@ img {
   transition: 0.25s;
 }
 
-.karty {
+.wizytowki {
   display: flex;
   max-width: 800px;
   width: calc(100% - 100px);
   height: 400px;
 }
 
-.karty .card {
+.wizytowki .panel {
   position: relative;
   margin: 5px;
   min-width: 60px;
   background: var(--bg);
   background-size: auto 150%;
   background-position: center;
-  transition: 1s var(--cb);
+  transition: 0.5s var(--cb);
   border-radius: 30px;
   overflow: hidden;
   cursor: pointer;
 }
 
-.karty .kcard .info .tytul {
+.wizytowki .panel .info .tytul {
   font-weight: bold;
   font-size: var(--font-naglowek);
   color: var(--kolor1-jasny);
 }
 
-.karty .card.active {
-  flex-grow: 1000;
-  background-size: cover;
+.wizytowki .panel.aktywny {
+  flex-grow: 10000;
+  background-size: auto 100%;
 }
 
-.karty .card:not(.active) .etykieta {
+.wizytowki .panel.aktywny .info {
+  opacity: 1;
+}
+
+.wizytowki .panel:not(.aktywny) .opis {
   left: 10px;
   bottom: 10px;
 }
 
-.karty .card.active .etykieta {
+.wizytowki .panel:not(.aktywny) .info {
+  opacity: 0;
+}
+
+.wizytowki .panel.aktywny .opis {
   left: 20px;
   bottom: 20px;
 }
 
-.karty .card .etykieta {
+.wizytowki .panel .opis {
   position: absolute;
   display: flex;
   height: 40px;
@@ -274,7 +282,7 @@ img {
   transition: 0.5s var(--cb);
 }
 
-.karty .card .etykieta .ikona {
+.wizytowki .panel .opis .ikona {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -285,7 +293,7 @@ img {
   border-radius: 50%;
 }
 
-.karty .card .etykieta .info {
+.wizytowki .panel .opis .info {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -294,7 +302,7 @@ img {
   transition: 1s var(--cb);
 }
 
-.karty .card .cien {
+.wizytowki .panel .cien {
   position: absolute;
   height: 100px;
   left: 0;
