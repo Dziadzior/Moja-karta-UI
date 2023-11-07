@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="design.css" />
 
     <!-- Nagłówek -->
-    <title>Document</title>
+    <title>Karty UI - Patryk Roszkowski</title>
   </head>
   <body>
     <!-- Karta UI - Początek -->
@@ -65,33 +65,34 @@
         </div>
       </div>
     </section>
+
     <!-- Karta UI - Koniec -->
 
     <!-- Karty - Początek -->
     <section class="etykiety">
       <div class="wizytowki">
-        <div class="panel aktywny" style="--bg: url(Obrazy/it2.jpg)">
+        <div class="panel aktywny" style="--bg: url(Obrazy/it.png)">
           <div class="cien"></div>
           <div class="opis">
-            <div class="ikona" style="--color: green">
+            <div class="ikona" style="--color: aqua">
               <ion-icon name="hardware-chip"></ion-icon>
             </div>
             <div class="info">
               <div class="tytul">Information Technology</div>
-              <div>IT Can Surprise</div>
+              <div class="tekst">IT Can Surprise</div>
             </div>
           </div>
         </div>
 
-        <div class="panel" style="--bg: url(Obrazy/programowanie.jpg)">
+        <div class="panel" style="--bg: url(Obrazy/programowanie.png)">
           <div class="cien"></div>
           <div class="opis">
-            <div class="ikona" style="--color: black">
+            <div class="ikona" style="--color: khaki">
               <i class="fa-solid fa-terminal"></i>
             </div>
             <div class="info">
               <div class="tytul">Codeing</div>
-              <div>Programming Is Developing</div>
+              <div class="tekst">Programming Is Developing</div>
             </div>
           </div>
         </div>
@@ -99,17 +100,17 @@
         <div class="panel" style="--bg: url(Obrazy/system.jpg)">
           <div class="cien"></div>
           <div class="opis">
-            <div class="ikona" style="--color: yellow">
+            <div class="ikona" style="--color: lime">
               <i class="fa-solid fa-laptop-code"></i>
             </div>
             <div class="info">
               <div class="tytul">IT systems</div>
-              <div>In one word, MULTI-TASKING</div>
+              <div class="tekst">In one word, MULTI-TASKING</div>
             </div>
           </div>
         </div>
 
-        <div class="panel" style="--bg: url(Obrazy/sieci.jpg)">
+        <div class="panel" style="--bg: url(Obrazy/sieci.png)">
           <div class="cien"></div>
           <div class="opis">
             <div class="ikona" style="--color: red">
@@ -117,13 +118,66 @@
             </div>
             <div class="info">
               <div class="tytul">Networks</div>
-              <div>Compare Them To Neurons</div>
+              <div class="tekst">Compare Them To Neurons</div>
             </div>
           </div>
         </div>
       </div>
     </section>
+
     <!-- Karty - Koniec -->
+
+    <!-- 3D Panele - Początek -->
+    <section class="widok">
+      <a href="#" class="pierwsze">
+        <div class="widok-glowny">
+          <div class="widok-blok">
+            <img src="Obrazy/laptop-off.png" class="glowne-zdjecie" />
+          </div>
+          <img src="Obrazy/mlm.png" class="dodatek" />
+        </div>
+        <h2>Systemy Operacyjne</h2>
+        <p>
+          Te systemy są mi bliskie, chociaż z pingwinem cały czas się dogadujemy
+          :)
+        </p>
+      </a>
+
+      <a href="#">
+        <div class="widok-glowny">
+          <div class="widok-blok">
+            <img src="Obrazy/3d-obraz2.png" class="glowne-zdjecie" />
+          </div>
+          <img src="Obrazy/hcj.png" class="dodatek" />
+        </div>
+        <h2>Języki programowania</h2>
+        <p>
+          Jestem samoukiem w tych językach, chociaż nie jestem początkujący :)
+        </p>
+      </a>
+    </section>
+
+    <!-- 3D Panele - Koniec -->
+
+    <!-- Panel CV - Początek -->
+    <section class="cv">
+      <div class="cv-glowny">
+        <div class="cv-kolo" style="--clr: red">
+          <img src="Obrazy/cv-logo.png" class="cv-logo" />
+        </div>
+        <div class="cv-opis">
+          <h2>CV - Patryk Roszkowski</h2>
+          <p>
+            Witaj, jeśli chcesz się dowiedzieć więcej na mój temat, wystarczy
+            kliknąć przycisk :)
+          </p>
+          <a href="Pliki/Patryk-Roszkowski-CV.pdf">Pobierz CV!</a>
+        </div>
+        <img src="Obrazy/ikona-cv.png" class="cv-ikona" />
+      </div>
+    </section>
+
+    <!-- Panel CV - Koniec -->
 
     <!-- Plusik JS -->
     <script src="plusik.js"></script>

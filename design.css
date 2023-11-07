@@ -10,6 +10,8 @@
   --kolor-tekst: hsl(0, 0%, 48%);
   --kolor-body: hsl(0, 58%, 29%);
   --kolor-cien: hsla(0, 0%, 73%, 0.574);
+  --kolor-opis: hsla(0, 0%, 73%, 0.917);
+  --kolor-sprite: rgba(0, 255, 0, 0.144);
 
   /* ROOT-Czcionka */
   --font-body: "Roboto", sans-serif;
@@ -19,6 +21,8 @@
 
   /* ROOT - Pozostałe */
   --cb: cubic-bezier(0.05, 0.61, 0.41, 0.95);
+  --widok-karta-wys: 300px;
+  --widok-karta-sze: calc(var(--widok-karta-wys) / 1.5);
 }
 
 /* Ogół */
@@ -28,6 +32,11 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
 body {
   font-family: var(--font-body);
   background-color: var(--kolor-body);
@@ -35,20 +44,31 @@ body {
 
 a {
   text-decoration: none;
+  color: var(--kolor-tekst);
 }
 
 ul {
   list-style: none;
 }
 
-/* img {
+section {
+  margin: -10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  scroll-snap-align: start;
+}
+
+img {
   max-width: 100%;
   height: auto;
-} */
+}
 
 /* Karta */
 
 .kartaui {
+  margin-top: -5%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -234,7 +254,7 @@ ul {
 
 .wizytowki .panel {
   position: relative;
-  margin: 5px;
+  margin: 8px;
   min-width: 60px;
   background: var(--bg);
   background-size: auto 150%;
@@ -248,7 +268,8 @@ ul {
 .wizytowki .panel .info .tytul {
   font-weight: bold;
   font-size: var(--font-naglowek);
-  color: var(--kolor1-jasny);
+  color: var(--kolor1);
+  text-shadow: 0 6px 26px var(--kolor-czarny);
 }
 
 .wizytowki .panel.aktywny {
@@ -270,7 +291,7 @@ ul {
 }
 
 .wizytowki .panel.aktywny .opis {
-  left: 20px;
+  left: 30px;
   bottom: 20px;
 }
 
@@ -288,9 +309,10 @@ ul {
   align-items: center;
   min-width: 40px;
   height: 40px;
-  background-color: var(--kolor1-jasny);
+  background-color: var(--kolor-tekst);
   color: var(--color);
   border-radius: 50%;
+  box-shadow: inset 2px 2px 10px 0px rgb(31, 31, 31);
 }
 
 .wizytowki .panel .opis .info {
@@ -309,4 +331,253 @@ ul {
   right: 0;
   bottom: 0;
   background: linear-gradient(0, var(--kolor-cien), transparent);
+}
+
+.wizytowki .info .tekst {
+  font-weight: 500;
+  color: var(--kolor-opis);
+  text-shadow: 1px 5px 10px var(--kolor1);
+  box-shadow: inset 2px 2px 10px 0px rgb(0, 0, 0);
+  border-radius: 30px;
+  text-align: center;
+}
+
+/* 3D Panele */
+
+.widok {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.widok-glowny {
+  position: relative;
+  margin: 0 50px;
+  padding: 0 36px;
+  width: var(--widok-karta-sze);
+  height: var(--widok-karta-wys);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  perspective: 3000px;
+}
+
+.widok-glowny:hover .widok-blok {
+  transform: perspective(900px) translateY(-5%) rotateX(35deg) translateZ(0);
+  box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.491);
+  -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.494);
+  -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.492);
+}
+
+.glowne-zdjecie {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.widok-blok {
+  position: absolute;
+  width: 100%;
+  transition: all 0.5s;
+  z-index: 1;
+}
+
+.widok-blok::before,
+.widok-blok::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  left: 0;
+  transition: all 0.5s;
+  opacity: 0;
+}
+
+.widok-blok::before {
+  height: 100%;
+  top: 0;
+  background-image: linear-gradient(to top, transparent 46%);
+}
+
+.widok-blok::after {
+  bottom: 0;
+  opacity: 1;
+  background-image: linear-gradient(to top, transparent 96%);
+}
+
+.widok-glowny:hover .widok-blok::before,
+.widok-blok::after {
+  opacity: 1;
+}
+
+.widok-glowny .widok-blok::after {
+  height: 120px;
+}
+
+.dodatek {
+  position: absolute;
+  width: 100%;
+  transition: all 0.5s;
+  opacity: 0;
+  z-index: 1;
+}
+
+.widok-glowny:hover .dodatek {
+  opacity: 1;
+  transform: translate3d(0%, -120%, 100px);
+}
+
+h2 {
+  margin-left: 1%;
+  padding-bottom: 10px;
+  color: var(--kolor-tekst);
+  text-align: left;
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 2px 5px 10px rgba(0, 0, 0, 0.7);
+}
+
+p {
+  margin-left: -5%;
+  text-align: center;
+  line-height: 2em;
+  width: 70%;
+}
+
+.pierwsze {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+/* Panel CV */
+
+.cv-glowny {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  border-radius: 30px;
+  transition-delay: 0.5s;
+}
+
+.cv-glowny:hover {
+  width: 600px;
+  transition-delay: 0.5s;
+}
+
+.cv-glowny .cv-kolo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+}
+
+.cv-glowny .cv-kolo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 350px;
+  height: 350px;
+  background: var(--kolor-body);
+  border: 8px solid var(--clr);
+  border-radius: 50%;
+  filter: drop-shadow(0 0 10px var(--clr)) drop-shadow(0 0 60px var(--clr));
+  transition: 0.5s, background 0.5s;
+  transition-delay: 0.75s, 1s;
+  box-shadow: inset 7px 4px 10px 0px rgb(31, 31, 31);
+}
+
+.cv-glowny:hover .cv-kolo::before {
+  width: 100%;
+  height: 100%;
+  background: var(--clr);
+  border-radius: 30px;
+  transition-delay: 0.5s;
+}
+
+.cv-glowny .cv-kolo .cv-logo {
+  position: relative;
+  width: 250px;
+  transition: 0.5s;
+  transition-delay: 0.5s;
+}
+
+.cv-glowny:hover .cv-kolo .cv-logo {
+  transform: scale(0);
+  transition-delay: 0s;
+}
+
+.cv-glowny .cv-ikona {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 300px;
+  transform: translate(-50%, -50%) scale(0) rotate(315deg);
+  transition: 0.5s ease-in-out;
+}
+
+.cv-glowny:hover .cv-ikona {
+  top: 35%;
+  left: 77%;
+  height: 300px;
+  transform: translate(-50%, -50%) scale(1) rotate(15deg);
+  transition-delay: 0.75s;
+}
+
+.cv-glowny .cv-opis {
+  position: absolute;
+  width: 50%;
+  left: 20%;
+  padding: 20px 20px 20px 40px;
+  transition: 0.5s;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.cv-glowny:hover .cv-opis {
+  left: 20px;
+  transition-delay: 0.75s;
+  visibility: visible;
+  opacity: 1;
+}
+
+.cv-glowny .cv-opis h2 {
+  color: var(--kolor-czarny);
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2rem;
+  line-height: 1em;
+  font-weight: bold;
+}
+
+.cv-glowny .cv-opis p {
+  margin-top: 10px;
+  width: 100%;
+  color: var(--kolor-czarny);
+  text-align: center;
+}
+
+.cv-glowny .cv-opis a {
+  position: relative;
+  margin-top: 10px;
+  margin-left: 25%;
+  padding: 10px 20px;
+  display: inline-block;
+  font-weight: 600;
+  color: var(--kolor-czarny);
+  background: var(--kolor-cien);
+  border-radius: 10px;
+  text-decoration: none;
 }
