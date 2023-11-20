@@ -112,6 +112,13 @@ img {
   left: 100%;
 }
 
+.glowna img {
+  width: 200px;
+  height: 80px;
+  border-radius: 20px;
+  margin-left: -5%
+}
+
 .nav-log {
   font-size: 2rem;
   text-decoration: none;
